@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon site de vente JARO </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue dans notre site de vente!</h1>  </header>
+
+        <main>
+            <section class="product">
+                <h2>Nos produits</h2>
+                <p>decouvrez notre selection de produit exceptionnels !</p>
+            </section>
+            <section class="signup">
+                <h2>Inscription</h2>
+                <form id="signupForm">
+                    <label for="name">Noms :</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">email :</label>
+                    <input type="email" id="email" email="email" required>
+                    
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password" required>
+                    <button id="soumettre" type="submit">s'inscrire</button>
+                   
+                </form>
+                <div id="message"></div>
+            </section>
+        </main>
+<footer>
+    <p>&copy; 2024 site de vente JARO</p>
+</footer>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(){
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email =document.getElementById('email').value;
+            const password =document.getElementById('password').value;
+            
+            //validation simple
+            if(name && email && password){
+                document.getElementById('message').textContent = 'Inscription reussie !';
+                document.getElementById('message').style.color = 'green';
+                //redirectionapres un delais pourque l'utilisateur puisse voir le message
+                setTimeout(function() {window.location.href ='articles.html';
+                    
+                }, 2000); //2 secondes de delais
+
+            }else{
+                    document.getElementById('message').textContent = 'veuillez remplir tous les champs.';
+                    document.getElementById('message').style.color = 'red';
+            }
+          
+        }); 
+    </script>
+
+  
+
+</body>
+</html>
